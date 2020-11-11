@@ -1,0 +1,48 @@
+<div class="menu_container">
+    <div class="header">
+        <img src="assets/logo.png">
+    </div>
+    <div class="menu">
+        <ol>
+            <li [ngClass]="{'active':active_tab == 'Overview'}" (click)="overview()">
+                <img src="assets/overview.png">
+                Overview
+            </li>
+            <li>
+                <img src="assets/messages.png">
+                Messages <span>99+</span>
+            </li>
+            <li  [ngClass]="{'active':active_tab == 'Search'}" (click)="search()">
+                <img src="assets/search.png">
+                Search
+            </li>
+            <li>
+                <img src="assets/filter.png">
+                Filter
+            </li>
+            <li>
+                <img src="assets/history.png">
+                Historu
+            </li>
+            <li>
+                <img src="assets/account.png">
+                My Account
+            </li>
+        </ol>
+    </div>
+    <div class="footer">
+        <ol>
+            <li>
+                <img src="assets/help.png">
+                Get Help
+            </li>
+            <li>
+                <img src="assets/logout.png">
+                Sign Out
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="main_container">
+    <router-outlet></router-outlet>
+</div>

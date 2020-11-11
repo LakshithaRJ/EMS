@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --green: #3ba77b;
+    --light-green: #d8ede4;
+    --grey: #989898;
+    --light-grey: #dddddd;
+    --black: #444444;
+    --white: #ffffff;
+    --background: #fafafa;
+    --red: #BD4931;
+    --yellow: #FFA700;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: var(--black);
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+  
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.6);
+}
+
+body {
+    background: var(--background);
+}

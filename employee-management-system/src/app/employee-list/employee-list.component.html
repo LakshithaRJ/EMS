@@ -1,0 +1,80 @@
+<div class="header">
+    <div class="select_team">
+        <select [(ngModel)]="filters.team" (ngModelChange)="apply_team_filter()">
+            <option selected value="">Choose Team . . .</option>
+            <option *ngFor="let team of teams" value={{team}}>{{team}}</option>
+        </select>
+        <img src="assets/team.png">
+    </div>
+    <div class="notification_container">
+        <img src="assets/bell.png">
+        <span>22</span>
+    </div>
+</div>
+<p class="results_container">
+    {{employees.length}} Results Found
+</p>
+<div class="card_container">
+    <div class="card" *ngFor="let employee of employees; let i = index;">
+        <div class="card_header">
+            <div class="img_container">
+                <img src="assets/contact.png">
+            </div>
+            <div class="name_container">
+                <h3>{{employee.name}}</h3>
+                <p>{{employee.position}}</p>
+            </div>
+            <img class="send" src="assets/send.png" (click)="send_message(i)">
+            <div class="message_container" *ngIf="employee.show">
+                <div>
+                    <div class="img_card">
+                        <img src="assets/gmail.png">
+                    </div>
+                    <div class="img_card">
+                        <img src="assets/slack.png">
+                    </div>
+                </div>
+                <div>
+                    <div class="img_card">
+                        <img src="assets/hangouts.png">
+                    </div>
+                    <div class="img_card">
+                        <img src="assets/git.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub_header">
+            <div class="half_card">
+                <span>Rating:</span><br>{{employee.rating}}
+            </div>
+            <div class="half_card">
+                <star-rating value={{employee.rating}} totalstars="5" checkedcolor="#3ba77b" uncheckedcolor="#dddddd" size="25px" readonly="false" (change)="on_rate($event)">
+                </star-rating>
+            </div>
+        </div>
+        <div class="sub_header" style="padding: 0;">
+            <div class="half_card">
+                <span>Experience:</span><br>{{employee.experience}} Years
+            </div>
+            <div class="half_card">
+                <span>Year of Joining:</span><br>{{employee.year_of_joining}}
+            </div>
+        </div>
+        <div class="card_body">
+            <span>Current Team:</span> {{employee.team}}
+        </div>
+        <div class="card_body">
+            <span>Reporting Manager:</span> {{employee.reporting_manager}}
+        </div>
+        <div class="card_footer">
+            <div class="half_card">
+                <a href="tel:{{employee.mobile}}"><img src="assets/mobile.png"> {{employee.mobile}}</a>
+            </div>
+            <div class="half_card">
+                <a href="mailto:{{employee.email}}"><img src="assets/email.png"> {{employee.email}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

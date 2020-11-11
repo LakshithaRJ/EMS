@@ -1,0 +1,65 @@
+<div class="filter_container">
+    <div class="back_btn" (click)="back()">
+        <img src="assets/back.png">
+    </div>
+    <ol>
+        <li>
+            <label>
+                <p>Team</p>
+                <select [(ngModel)]="filters.team">
+                    <option selected value="">Choose . . .</option>
+                    <option *ngFor="let item of teams" value={{item}}>{{item}}</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <label>
+                <p>Department</p>
+                <select [(ngModel)]="filters.department">
+                    <option selected value="">Choose . . .</option>
+                    <option *ngFor="let item of departments" value={{item}}>{{item}}</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <label>
+                <p>Role</p>
+                <select [(ngModel)]="filters.role">
+                    <option selected value="">Choose . . .</option>
+                    <option *ngFor="let item of roles" value={{item}}>{{item}}</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <label>
+                <p>Designation</p>
+                <select [(ngModel)]="filters.designation">
+                    <option selected value="">Choose . . .</option>
+                    <option *ngFor="let item of designations" value={{item}}>{{item}}</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <label>
+                <p>Year of Joining</p>
+                <select [(ngModel)]="filters.year_of_joining">
+                    <option selected value="">Choose . . .</option>
+                    <option *ngFor="let item of years" value={{item}}>{{item}}</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <label>
+                <p>Location</p>
+                <select [(ngModel)]="filters.location">
+                    <option selected value="">Choose . . .</option>
+                    <option *ngFor="let item of locations" value={{item}}>{{item}}</option>
+                </select>
+            </label>
+        </li>
+    </ol>
+    <div class="button_container">
+        <button (click)="clear()">Clear</button>
+        <button (click)="appply_filter()">Submit</button>
+    </div>
+</div>
